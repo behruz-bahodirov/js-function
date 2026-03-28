@@ -36,3 +36,24 @@ z = 0
 console.log(sumMix([1,2,3,'3']))
 console.log(sumMix(['1',7,31,'3']))
 console.log(sumMix(['11',4,'3',3]))
+
+function Counter() {
+  this.value = 0;
+}
+
+Counter.prototype.increase = function() {
+  this.value++;
+};
+
+Counter.prototype.getValue = function() {
+  return this.value;
+};
+
+Counter.prototype.reset = function() { 
+  this.value = 0;
+};  
+Test.assertEquals(counter.getValue(), 0, 'Initial counter value must be 0');
+counter.increase();
+Test.assertEquals(counter.getValue(), 1, 'Counter value must be increased');
+counter.reset();
+Test.assertEquals(counter.getValue(), 0, 'Counter value must be 0 after reset');
